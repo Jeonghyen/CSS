@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            border:30px dashed #999;
+            width: 700px;
+            height: 700px;
+            position: relative;
+            left: 0px;
+            top: 0px;
+        }
+
+        .hour, .min, .sec {
+            border: 16px solid #555;
+            width: 50px;
+            position: absolute;
+            border-radius: 50px;
+            /* transition-timing-function: linear; */
+           
+        }
+
+        .sec{
+            background-color: gold;
+            height: 290px;
+            left: 309px;
+            /* opacity: 0; */
+             /* transition: 1s all; */
+             transition-duration: 60S;
+             transform-origin: center bottom;
+             transition-timing-function: linear;
+        }
+
+        .min{
+            background-color: cornflowerblue;
+            height: 220px;
+            left: 309px;
+            top: 70px;
+            transition-duration: 360s;
+             transition-property: all;
+            transform-origin: center bottom;
+             transition-timing-function: linear;
+
+        }
+
+        .hour{
+            background-color: tomato;
+            height: 150px;
+            left: 309px;
+            top: 140px;
+            /* transition: 3600s all; */
+            transition-duration: 21600s;
+            transform-origin: center bottom;
+            transition-timing-function: linear;
+
+        }
+
+        span{
+            display: block;
+            font-variant: small-caps;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #main:hover .min{
+            transform: rotate(36000deg);
+        }
+        #main:hover .sec{
+            transform: rotate(36000deg);
+        }
+        #main:hover .hour{
+            transform: rotate(36000deg);
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="hour">
+            <span>HOUR</span>
+        </div>
+        <div class="min">
+            <span>MIN</span>
+        </div>
+        <div class="sec">
+            <span>SEC</span>
+        </div>
+    </div>
+</body>
+</html>
