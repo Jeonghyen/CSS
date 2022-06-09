@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table{
+        border: 1px solid gray;
+        border-collapse: collapse;
+        width: 600px;
+    }
+
+     th {
+            border: 1px solid gray;
+			background-color: #DEDEDE;
+			width: 100px;
+			text-align: center;
+		}
+
+    td {
+			border: 1px solid gray;
+			padding: 10px;
+		}
+
+    tr:nth-child(2)  input, tr:nth-child(3)  input{
+        width: 98%;
+    }
+
+    tr:nth-child(1)  input:nth-child(1) {
+			width: 60px;
+		}
+</style>
+<body>
+    <h1>우편 번호 검색</h1>
+    
+    <form name="form1">
+        
+        <table >
+            <tr>
+                <th>우편번호</th>
+                <td>
+                    <input type="text" name="txtcheck">
+                    <input type="button" name="btncheck" value="우편번호검사하기">
+                </td>
+            </tr>
+            <tr>
+                <th>주소</th>
+                <td><input type="text" name="txtaddress"></td>
+            </tr>
+            <tr>
+                <th>상세 주소</th>
+                <td><input type="text" name="txtdetailad"></td>
+            </tr>
+        </table>
+    </form>
+
+
+    <script>
+
+        var txtcheck, btncheck, txtaddress, txtaddressad;
+
+        txtcheck = document.form1.txtcheck;
+        btncheck = document.form1.btncheck;
+        txtaddress = document.form1.txtaddress;
+        txtdetailad= document.form1.txtaddressad;
+
+        btncheck.onclick = select;
+
+        function select() {
+             window.open('form1.html','child','width=500 height=300');
+
+        }
+
+       
+
+
+    </script>
+</body>
+</html>
