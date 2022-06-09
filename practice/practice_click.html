@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+
+        body{
+            width: 200px;
+        }
+        
+        input[type=text] {
+            outline: none;
+        }
+
+        form {
+            margin: 20px auto;
+        }
+
+        form > div {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+ 
+<body>
+    <h1>데이터 입력</h1>
+    <form name="form1">
+        <div>이름 : <input type="text" name="txtName"></div>
+        <div>나이 : <input type="text" name="age"></div>
+        <div>별명 : <input type="text" name="nickname"></div>
+        <div><input type="button" value="Long" name="lbtn">
+        <input type="button" value="Short" name="sbtn"></div>
+    </form>
+
+
+    <script>
+
+        var txtName, age, nickname, lbtn, sbtn;
+
+        txtName =  document.form1.txtName;
+        age =  document.form1.age;
+        nickname =  document.form1.nickname;
+        lbtn =  document.form1.lbtn;
+        sbtn =  document.form1.sbtn;
+        
+        
+        lbtn.onclick = long;
+        sbtn.onclick = short;
+
+        function long(){
+            txtName.size = 50;
+            age.size = 50;
+            nickname.size = 50;
+        }
+        
+        function short(){
+            txtName.size = 20;
+            age.size = 20;
+            nickname.size = 20;
+        }
+
+    </script>
+</body>
+</html>
