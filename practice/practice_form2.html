@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          table{
+        border: 1px solid gray;
+        border-collapse: collapse;
+        width: 600px;
+        }
+
+     th {
+            border: 1px solid gray;
+			background-color: #DEDEDE;
+			width: 100px;
+			text-align: center;
+		}
+
+    td {
+			border: 1px solid gray;
+			padding: 10px;
+		}
+
+    tr:nth-child(1) input {
+        width : 80px;
+    }
+    tr:nth-child(2) input {
+        width : 30px;
+    }
+    tr:nth-child(2) input:nth-child(1) {
+        width : 50px;
+    }
+    </style>
+</head>
+<body>
+     <h1>회원 가입</h1>
+    
+    <form name="form1">
+        
+        <table >
+            <tr>
+                <th>주민번호</th>
+                <td>
+                    <input type="text" name="ssn1"> -
+                    <input type="text" name="ssn2">
+                </td>
+            </tr>
+            <tr>
+                <th>생년월일</th>
+                <td>
+                    <input type="text" name="txtyear"> 년
+                    <input type="text" name="txtmonth"> 월
+                    <input type="text" name="txtdate"> 일
+                </td>
+            </tr>
+            <tr>
+                <th>성별</th>
+                <td>
+                    <input type="radio" name="man"> 남
+                    <input type="radio" name="women"> 여
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+
+        var ssn1, ssn2, txtyear,txtmonth, txtdate, man, women;
+
+        ssn1 = document.form1.ssn1;
+        ssn2 = document.form1.ssn2;
+        txtyear = document.form1.txtyear;
+        txtmonth = document.form1.txtmonth;
+        txtdate = document.form1.txtdate;
+        man = document.form1.man;
+        women = document.form1.women;
+
+        //ssn1.onkeyup = nextssn();
+
+        //man.focus();
+
+        ssn1.onkeydown = function(){
+
+            //주민번호 앞자리로 생년월일 자동입력
+            if(ssn1.value.length == 6){
+            ssn2.focus();
+            if(ssn1.value.substr(0,2)  > 22){
+                txtyear.value = '19' + ssn1.value.substr(0,2);
+            } else {
+                txtyear.value = '20' + ssn1.value.substr(0,2);
+            }
+            txtmonth.value = ssn1.value.substr(2,2);
+            txtdate.value = ssn1.value.substr(4);
+
+        }
+        
+        }
+
+
+        ssn2.onkeyup = function(){
+
+            //주민번호 뒷자리 첫번째가 1일시 남자, 2일시 여자에 체크
+            if(ssn2.value.length == 1){
+                if(parseInt(ssn2.value) % 2 == 1){
+                man.checked = true;
+                } else {
+                 women.checked = true;
+                }
+            }
+
+        }
+        
+
+
+
+
+
+    </script>
+</body>
+</html>
