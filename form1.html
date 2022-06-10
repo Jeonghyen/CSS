@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="form1">
+        <input type="button" value="서울시 강남구 역삼동" name="btn"><br>
+        <input type="button" value="서울시 강남구 대치동" name="btn"><br>
+        <input type="button" value="서울시 강남구 도곡동" name="btn"><br>
+    </form>
+
+    <script>
+        var list = document.form1.btn;
+
+        for(var i=0; i<list.length; i++){
+            list[i].onclick = selected;
+        }
+
+
+        function selected() {
+            
+            opener.document.form1.txtaddress.value = event.target.value;
+            opener.document.form1.txtdetailad.focus();
+            window.close();
+
+
+            
+
+        }
+    </script>
+</body>
+</html>
