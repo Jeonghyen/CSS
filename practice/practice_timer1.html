@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+
+
+
+   #txt1 {
+			font-size: 10em;
+			font-weight: bold;
+			text-align: center;
+			width: 250px;
+			display: block;
+			margin: 100px auto;
+			border: 0px;
+		}
+
+</style>
+<body>
+    <form name="form1">
+       <div><input type="text" name="txt" id="txt1" value="10"> </div>
+    </form>
+
+    <script>
+
+        var txt = document.form1.txt;
+
+        setInterval(count1, 1000);
+        
+
+        var num = 10;
+        
+        function count1() {
+            
+            num--;
+           
+            txt.value = num;
+
+            if(txt.value == 0){
+                location.href = "http://google.com";
+            }
+        }
+
+    </script>
+</body>
+</html>
