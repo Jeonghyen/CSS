@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    form {
+        width: 200px;
+        margin: 20px auto;
+    }
+
+    form > div {
+        margin-bottom: 15px;
+    }
+
+    form > div > input {
+        display: block;
+        margin-bottom: 5px;
+        outline: none;
+    }
+
+    #txtid { width: 150px; }
+    #check { width: 250px; border: 0px solid transparent; outline: none; color: red; }
+
+    
+    </style>
+</head>
+<body>
+    <form name="form1">
+        <h1>회원 가입</h1>
+        <div>아이디 : <input type="text" name="txtid" id="txtid"></div>
+        <div><input type="text" name="check" id="check" readonly></div>
+    </form>
+
+
+    <script>
+
+        var txtid, check;
+
+        txtid = document.form1.txtid;
+        check = document.form1.check;
+
+        txtid.onkeyup = checkid;
+
+        function checkid(){
+
+            if(txtid.value.length == 0){
+                check.value = "";
+            } else if(txtid.value.length < 4){
+                check.value = "아이디는 4~12자리 내로 입력하세요.";
+            } else if (txtid.value.length > 12){
+                check.value = "아이디는 4~12자리 내로 입력하세요.";
+            } else {
+                check.value = "아이디가 적합합니다."
+                check.style.color = 'green'
+            }
+
+        }
+
+
+
+    </script>
+</body>
+</html>
