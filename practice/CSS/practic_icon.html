@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+
+        #main{
+            width: 800px;
+            margin: 0px auto;
+        }
+
+        .box{
+            float:left;
+            border:10px solid black;
+            width: 126px;
+            height: 126px;
+            margin-left: -10px;
+            overflow: hidden;
+        }
+
+        .line{
+            margin-bottom: 10px;
+            
+        }
+
+        .line::after{
+            content:'';
+            display: block;
+            clear: both;
+        }
+
+        img::after{
+            content:'';
+            display: block;
+            clear: both;
+        }
+
+
+        #line1 img{
+            display: block;
+            transform: translate(-126px);
+            transition: .5s all;
+        }
+
+        #line1 .box:hover img{
+            transform: translate(0px);
+        }
+
+        #line2 img{
+            opacity: 0;
+            transition: .5s all;
+
+        }
+
+        #line2 .box:hover img{
+            opacity: 1;
+        }
+
+        #line3 img{
+            transform: scale(0);
+            transition: .5s all;
+        }
+
+         #line3 .box:hover img{
+            transform: scale(1);
+        }
+
+        #line4 img{
+            transform: translate(0, -126px);
+            transition: .5s all;
+        }
+
+        #line4 .box:hover img{
+            transform: translate(0, 0) rotate(360deg);
+        }
+
+
+
+    </style>
+</head>
+<body>
+  
+    <div id="main">
+        <div id="line1" class="line">
+            <div id="box1" class="box">
+                <img src="images2/rect_icon01.png" alt="">
+            </div>
+            <div id="box2" class="box">
+                <img src="images2/rect_icon02.png" alt="">
+            </div>
+            <div id="box3" class="box">
+                <img src="images2/rect_icon03.png" alt="">
+            </div>
+            <div id="box4" class="box">
+                <img src="images2/rect_icon04.png" alt="">
+            </div>
+            <div id="box5" class="box">
+                <img src="images2/rect_icon05.png" alt="">
+            </div>
+        </div>
+        <div id="line2"  class="line">
+            <div id="box1" class="box">
+                <img src="images2/rect_icon01.png" alt="">
+            </div>
+            <div id="box2" class="box">
+                <img src="images2/rect_icon02.png" alt="">
+            </div>
+            <div id="box3" class="box">
+                <img src="images2/rect_icon03.png" alt="">
+            </div>
+            <div id="box4" class="box">
+                <img src="images2/rect_icon04.png" alt="">
+            </div>
+            <div id="box5" class="box">
+                <img src="images2/rect_icon05.png" alt="">
+            </div>
+        </div>
+        <div id="line3"  class="line">
+            <div id="box1" class="box">
+                <img src="images2/rect_icon01.png" alt="">
+            </div>
+            <div id="box2" class="box">
+                <img src="images2/rect_icon02.png" alt="">
+            </div>
+            <div id="box3" class="box">
+                <img src="images2/rect_icon03.png" alt="">
+            </div>
+            <div id="box4" class="box">
+                <img src="images2/rect_icon04.png" alt="">
+            </div>
+            <div id="box5" class="box">
+                <img src="images2/rect_icon05.png" alt="">
+            </div>
+        </div>
+        <div id="line4" class="line">
+            <div id="box1" class="box">
+                <img src="images2/rect_icon01.png" alt="">
+            </div>
+            <div id="box2" class="box">
+                <img src="images2/rect_icon02.png" alt="">
+            </div>
+            <div id="box3" class="box">
+                <img src="images2/rect_icon03.png" alt="">
+            </div>
+            <div id="box4" class="box">
+                <img src="images2/rect_icon04.png" alt="">
+            </div>
+            <div id="box5" class="box">
+                <img src="images2/rect_icon05.png" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
