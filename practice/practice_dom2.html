@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tbl1 {
+            border: 1px solid black;
+            border-collapse: collapse;
+           
+        }
+
+        td {
+            text-align: center;
+            font-size: 1.2rem;;
+            border: 1px solid black;
+             width: 100px;
+            height: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <table id="tbl1">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+    </table>
+
+
+    <script>
+
+        var tbl1 = document.getElementById('tbl1');
+
+        var col = 2;
+        var row = 2;
+        var num = 0;
+        
+        window.onkeydown = function(){
+            
+            num = 1;
+            
+            //alert(event.keyCode); //왼> 37, 위 > 38, 오 > 39, 아래 > 40
+            
+            
+            if(event.keyCode == 38) { //위
+                
+                row--;
+                if (row < 1) row = 1;
+                generate();
+                
+            } else if(event.keyCode == 40) {//아래
+
+                row++;
+                generate();
+            
+
+            } else if(event.keyCode == 37) { //왼
+
+                //열 감소
+                col--;
+                if (col < 1) col = 1;
+                generate();
+
+               
+
+            } else if(event.keyCode == 39){ //오
+
+                //열 증가
+                col++;
+                generate();
+
+            }
+
+        }
+
+        
+       	function generate() {
+			tbl1.innerHTML = "";
+			var temp = "";
+
+			for (var i=0; i<row; i++) {
+				temp = "<tr>";
+				for (var j=0; j<col; j++) {
+					temp += "<td>";
+					temp += num;
+					temp += "</td>";			
+					num++;
+				}
+				temp += "</tr>";
+                tbl1.innerHTML += temp;
+			}
+		}
+
+
+
+
+    </script>
+</body>
+</html>
