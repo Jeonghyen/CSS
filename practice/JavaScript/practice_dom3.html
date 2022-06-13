@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tbl1, td{
+            border: 1px solid gray;
+            border-collapse: collapse;
+           
+        }
+
+        #tbl1 td{
+            width : 150px;
+            height : 150px;
+            text-align: center;
+            font-size: 5rem;
+            font-weight: bold;
+        }
+
+
+    </style>
+</head>
+<body oncontextmenu="return false">
+    <table id="tbl1">
+        <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+    </table>
+
+
+    <script>
+
+        var tds = document.getElementsByTagName('td');
+        
+        for(var i=0; i<tds.length; i++){
+            
+            
+            var n = 0;
+            
+            tds[i].onmousedown = function(event){
+                
+                
+                //n = 0;
+                	var c = event.srcElement;
+					var n = parseInt(c.innerHTML);
+                
+                if(event.buttons == 1){
+                    
+                    //event.target.innerHTML = n;
+                    n++;
+                    c.innerText = n;
+                    event.target.bgColor = "white";
+
+                    
+                    
+                } else if(event.buttons == 2) {
+                   
+						
+                    
+                    if(n <= 0) {
+                        
+                        n = 0;
+                        event.target.bgColor = "#ccc";
+                        event.srcElement.onmousedown = null;
+
+                    } else if(n > 0){
+                        n--;
+                        event.target.innerHTML = n; 
+
+                    }
+
+
+            } 
+
+
+        }
+            
+        }
+
+       
+
+
+
+
+
+
+    </script>
+</body>
+</html>
