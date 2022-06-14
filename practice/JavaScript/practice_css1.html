@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .imgs{
+            position: absolute;
+            /* left: 0;
+            right: 0; */
+        }
+    </style>
+</head>
+<body>
+
+    <img src="/css/images2/face03.png" alt="">
+    <script>
+
+        window.onmousedown = function(){
+
+            if(event.buttons == 1){
+                
+
+                let imgs = document.createElement('img');
+
+                imgs.setAttribute('src','/css/images2/face03.png');
+
+                imgs.classList.add('imgs');
+
+                
+                imgs.style.left = (event.clientX  -75) + 'px';
+                imgs.style.top = (event.clientY  -75) + 'px';
+                
+                document.body.appendChild(imgs);
+
+            }
+
+        }
+
+        
+        //고스트이미지 제거
+        window.onmousemove = function() {
+            
+            event.stopPropagation();
+            return false;   
+        }
+
+
+
+    </script>
+</body>
+</html>
