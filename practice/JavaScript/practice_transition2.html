@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        #box{
+            /* transition: s all; */
+            position: absolute;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <input type="button" id="btn1" value="시작">
+    <div id="box">
+    <img src="/css/images2/catty01.png" alt="">
+    </div>
+
+    <script>
+
+        const btn1 = document.getElementById('btn1');
+        const box = document.getElementById('box');
+        const xlist = [];
+        const ylist = [];
+        let timer = 0;
+        var i = 0;
+        
+        
+        window.onmousemove = () => {
+            
+            //ctrl누른 후 움직인 좌표 배열에 넣기
+            if(event.ctrlKey){
+                xlist.push(event.clientX);
+                ylist.push(event.clientY);
+                console.log(xlist);
+                console.log(ylist);
+            }
+        }
+
+        btn1.onclick = () => {
+
+ 
+               
+                           timer = setInterval(()=>{
+
+
+
+                            box.style.transform =`translate(${xlist[i] -64}px, ${ylist[i] -64}px)`;
+
+
+                            console.log(xlist[i],ylist[i]);
+                            i++;
+                            
+                            if(i > xlist.length){
+                                clearInterval(timer);
+                            }
+
+
+                            	// box.style.left = xlist[0] -64 + "px";
+                                // box.style.top = ylist[0] -64 + "px";
+
+                                // console.log(xlist[0], ylist[0]);
+
+                                // xlist.shift();
+                                // ylist.shift();
+
+                                // if (xlist.length == 0) {
+                                //     clearInterval(timer);
+                                // }
+
+                            
+                            
+                        },21);
+                        
+                        
+                    
+
+
+                }
+            
+            
+            
+        
+    
+    
+
+    </script>
+</body>
+</html>
