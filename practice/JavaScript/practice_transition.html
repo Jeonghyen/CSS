@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #txt1 {
+            width : 1000px;
+            height: 80px;
+            font-size: 60px;
+        }
+
+        #tbl1{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        
+        
+        #tbl1 td {
+            border: 1px solid black;
+            width: 120px;
+            height: 20px;
+            margin: 10px;
+        }
+    </style>
+
+    <script>
+
+        window.onload = function() {
+
+
+            const txt1 = document.getElementById('txt1');
+            const body = document.body;
+            let gap = 0;
+
+            let timer = 0;
+            let color = 0;
+            
+            txt1.onkeydown = function() {
+
+                //alert();
+                //화면 진동
+                
+                
+                
+                body.style.transform = 'translate(5px, -5px)';
+                // body.style.transform = 'translate(0px, 0px)';
+                
+                
+                body.style.backgroundColor = `rgba(255,0,0,${color})`;
+
+                color += 0.1;
+
+                
+                
+                
+                
+            }
+            
+            txt1.onkeyup = function() {
+                
+                
+                body.style.transform = 'translate(0px, 0px)';
+
+            }
+            
+            
+         	timer = setInterval(function() {
+
+			        gap++;
+
+                if (gap > 2) {
+                    gap = 0;
+                    timer = 0;
+                    color = 0;
+                    document.body.style.backgroundColor = "white";
+                }
+
+		}, 1000);
+
+        }
+
+
+
+    </script>
+</head>
+<body>
+    <h1>제목입니다.</h1>
+    <input type="text" id="txt1">
+    <hr>
+    <h2>다른 내용입니다.</h2>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis minima, exercitationem odio tempore beatae omnis officiis doloremque nobis necessitatibus quidem cum reiciendis? Amet quae ipsam aperiam culpa maiores doloremque dignissimos.
+    </p>
+    <p>
+        Repellendus qui expedita nobis numquam quod, laborum voluptatem, necessitatibus laboriosam assumenda quae similique fugiat alias sed vel dolorum illum eveniet aperiam, est eius quibusdam culpa. Autem culpa omnis aliquid numquam!
+    </p>
+    <p>
+        Maxime corrupti a, nihil mollitia libero, tempore reprehenderit dicta quod magni voluptatibus quisquam aperiam consequatur qui consequuntur natus iste dolores. Odio nostrum minima voluptate aspernatur. Qui quae error aut consequatur!
+    </p>
+    <p>
+        Enim aperiam harum praesentium perspiciatis soluta, est obcaecati maiores eligendi beatae reiciendis explicabo mollitia, repellendus minus laborum nemo maxime nulla, eum quam voluptatibus repudiandae? Fuga aliquid eos consequuntur dolorem harum?
+    </p>
+    <p>
+        Officia nesciunt voluptatibus ea molestias quo fugiat repellat consequatur. Labore ea, tenetur aliquid accusantium provident architecto, a molestias dolorum voluptate eveniet culpa itaque, reiciendis et cupiditate quia dolor id nulla!
+    </p>
+
+    <h1>Table</h1>
+
+    <table id="tbl1">
+        <tr>
+            <td>
+                Lorem, ipsum dolor.
+            </td>
+            <td>
+                Quam, aliquid harum?
+            </td>
+            <td>
+                Explicabo, voluptatem temporibus!
+            </td>
+            <td>
+                Voluptatem, debitis modi.
+            </td>
+            <td>
+                Architecto, quidem aspernatur!
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Lorem, ipsum dolor.
+            </td>
+            <td>
+                Quas, illum? Maxime.
+            </td>
+            <td>
+                Incidunt, ducimus deleniti?
+            </td>
+            <td>
+                Delectus, inventore corrupti?
+            </td>
+            <td>
+                Totam, illo voluptatibus.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Lorem, ipsum dolor.
+            </td>
+            <td>
+                Sequi, totam optio!
+            </td>
+            <td>
+                Labore, quisquam nisi?
+            </td>
+            <td>
+                Exercitationem, facilis? Eius.
+            </td>
+            <td>
+                Aliquam, atque perspiciatis!
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Lorem, ipsum dolor.
+            </td>
+            <td>
+                Dolorem, consequatur repellat!
+            </td>
+            <td>
+                Assumenda, eum reprehenderit!
+            </td>
+            <td>
+                Earum, accusamus nobis.
+            </td>
+            <td>
+                Expedita, veniam doloremque!
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Lorem, ipsum dolor.
+            </td>
+            <td>
+                Maiores, provident deleniti.
+            </td>
+            <td>
+                Adipisci, hic excepturi?
+            </td>
+            <td>
+                Eius, vero repellat.
+            </td>
+            <td>
+                Similique, fuga dolor!
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Lorem, ipsum dolor.
+            </td>
+            <td>
+                Nemo, optio quis.
+            </td>
+            <td>
+                Numquam, perspiciatis saepe?
+            </td>
+            <td>
+                Consequatur, rem tempora!
+            </td>
+            <td>
+                Minima, assumenda magnam.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Lorem, ipsum dolor.
+            </td>
+            <td>
+                Ex, repellendus hic!
+            </td>
+            <td>
+                Alias, soluta totam.
+            </td>
+            <td>
+                Accusamus, voluptatum iure!
+            </td>
+            <td>
+                Suscipit, deleniti quaerat.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Lorem, ipsum dolor.
+            </td>
+            <td>
+                Quo, perferendis totam?
+            </td>
+            <td>
+                Architecto, fugit amet?
+            </td>
+            <td>
+                Tempora, id inventore.
+            </td>
+            <td>
+                Eius, mollitia fuga!
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
