@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/javascript/js/jquery-1.12.4.js"></script>
+    <style>
+
+
+        #div1{
+
+            margin: 20px;
+            width: 1000px;
+            
+        }
+
+        #imgView img {
+			border: 1px solid #999;
+		}
+        
+        
+        #div1 input[type=button]{
+            border-radius: 0;
+            border: 1px solid grey;
+            background-color: white;
+            width: 80px;
+            height: 45px;
+            text-align: center;
+            display: inline;
+        }
+
+        #div1 #btn1 {
+			background-color: tomato;
+			color: white;
+		}
+
+		#div1 input {
+			cursor: pointer;
+			outline: none;
+		}
+    </style>
+</head>
+<body>
+    <h1>이미지 뷰어</h1>
+
+    <div id="div1">
+       <input type="button" value="▷" class="btn" id="btn1">
+       <input type="button" value="1" class="btn" id="btn2">
+       <input type="button" value="2" class="btn" id="btn3">
+       <input type="button" value="3" class="btn" id="btn4">
+       <input type="button" value="4" class="btn" id="btn5">
+       <input type="button" value="5" class="btn" id="btn6">
+       <input type="button" value="6" class="btn" id="btn7">
+       <input type="button" value="7" class="btn" id="btn8">
+       <input type="button" value="8" class="btn" id="btn9">
+       <input type="button" value="9" class="btn" id="btn10">
+       <input type="button" value="10" class="btn" id="btn11">
+    </div>
+    <div id="imgView">
+        <img src="/css/images2/wall01.jpg" alt="">
+    </div>
+
+    <script>
+
+
+   
+
+        //이미지 재생
+
+        const btn1 = document.getElementById('btn1');
+        const imgView= document.getElementById('imgView'); //img
+        const div1 = document.getElementById('div1'); //img
+        const btns = document.getElementsByClassName('btn'); //모든 버튼
+
+
+
+        console.log(div1.children[0]);
+
+        let start = false;
+        let timer = 0;
+        let num = 1;
+
+
+        btn1.onmousedown = () => {
+
+            
+
+            start = true;
+
+            if(btn1.value == '▷'){
+
+                btn1.value = '||';
+
+                timer = setInterval(()=>{
+                    setImg(num);
+
+                    for (let i=1; i<div1.children.length; i++) {
+					    div1.children[i].value = i;
+				    }
+
+                    div1.children[num].value = `[${num}]`;
+                    //event.target.value = `[${num}]`;
+
+            
+                    num++;
+                    
+                    if(num > 10){
+                        num = 1;   
+                    }
+                //event.srcElement.value = `[${num}]`;
+
+                },1000);
+            } else {
+
+                btn1.value = '▷';
+                clearInterval(timer);
+                
+            }
+
+         
+        }
+
+        
+        //버튼 클릭 시 이미지 변경
+        //JS
+        for(let i=1; i<btns.length; i++){
+
+            btns[i].onmousedown = ()=>{
+
+                //alert();
+
+                //타이머 멈추기
+                btn1.value = '▷';
+                clearInterval(timer); 
+
+                //클릭한 버튼의 value값을 받아 이미지 가져오기
+                setImg(event.target.value);
+
+                for(let i=1; i<btns.length; i++){
+
+                    btns[i].value = i;
+
+                }
+
+                //현재 활성화된 버튼에 []표시하기
+                event.target.value = `[${event.target.value}]`;
+
+
+
+
+            }
+        }
+        
+        
+
+        function setImg(num){
+
+              if(num > 9){
+                        imgView.innerHTML = `<img src="/css/images2/wall${num}.jpg">`;
+                    } else{
+                        imgView.innerHTML = `<img src="/css/images2/wall0${num}.jpg">`;
+                    }
+
+
+        }
+
+
+        
+        
+        
+        //jQuery
+        
+        // $('.btn').mousedown(()=>{
+
+            
+        //     if(event.target.id != 'btn1'){ //첫번째 버튼 제외
+                
+        //         $('#btn1').val('▷');  //버튼 표시 바꾸기
+        //         clearInterval(timer);  //타이머 중지
+
+        //         //value값에 따라 이미지 바꾸기
+        //        $('#imgView').html(`<img src="/css/images2/wall0${event.target.value}.jpg">`);  
+
+        //        if(event.target.value > 9){  
+
+        //          $('#imgView').html(`<img src="/css/images2/wall${event.target.value}.jpg">`);
+        //        }
+
+
+        //        //value에 []표시
+
+        //        for(let i=1; i<$('.btn').length; i++){
+
+        //             $('.btn').eq(i).val(`${i}`);
+        //        }
+
+        //     $(event.target).val(`[${$(event.target).val()}]`);
+        //     }
+            
+        // })
+
+
+    </script>
+</body>
+</html>
