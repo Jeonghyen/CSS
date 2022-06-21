@@ -22,9 +22,9 @@
   
         }
 
-        #vertical {
+        #vertical, #horizon{
 
-            border: 3px solid tomato;
+            border: 2px solid tomato;
             position: relative;
             top: 50%;
             z-index: 2;
@@ -32,21 +32,17 @@
         
         #horizon {
 
-            border: 3px solid tomato;
-            position: relative;
-            top: 50%;
             margin-top: -9px;
             transform: rotate(90deg);
-            z-index: 2;
 
+       }
 
-
-        }
-
-        img{
+        #image {
             position: relative;
             top: 50%;
-            margin-top: -128px;
+            margin-top: -80px;
+            margin-left: -200px;
+            /* transition: all 1s; */
         }
 
 
@@ -58,8 +54,77 @@
 
         <div id="vertical"></div>
         <div id="horizon"></div>
-        <img src="/css/images2/catty01.png" alt="">
+        <img id="image" src="/css/images2/catty01.png" alt="">
         
     </div>
+
+    <script>
+
+        const cat = document.getElementById('image');
+
+        let timer = 0;
+        let num = 1;
+        let left = 0;
+
+        //이미지 시작
+        window.onmousedown = ()=>{
+
+            //타이머가 0일 때만 시작
+            if(timer == 0){
+            
+            timer = setInterval(() => {
+                
+                cat.style.transform = `translate(${left}px, 0px)`; 
+                
+                left += 3;
+                
+                
+                if(left > 1000){
+                    left = 0;
+                    num += 1;
+                    cat.src = `/css/images2/catty0${num}.png`;
+                }
+
+                if(num > 9){
+
+                    num = 1;
+                }
+                
+            }, 1);
+            
+        } else {
+
+
+            if(left >= 460 && left <= 550){
+                //이미지 멈추기
+                clearInterval(timer);
+                //타이머 재시작 방지
+                //timer = 0;
+
+                document.getElementById('circle').style.backgroundColor = "gold";
+
+            } else {
+
+                    //못 맞추면 배경 빨갛게 하기
+                     document.getElementById('circle').animate([
+                         {backgroundColor: 'tomato'}
+                     ], {
+                         duration: 150
+                     })
+                
+
+            }
+               
+
+        }
+        
+
+    
+        
+        
+    }
+
+    </script>
+
 </body>
 </html>
