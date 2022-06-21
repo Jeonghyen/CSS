@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            background-color: black;
+         
+        }
+        #circle{
+
+            width: 700px;
+            height: 700px;
+            background-color: white;
+            border-radius: 50%;
+            margin: 70px auto;
+            overflow: hidden;
+  
+        }
+
+        #vertical {
+
+            border: 3px solid tomato;
+            position: relative;
+            top: 50%;
+            z-index: 2;
+        }
+        
+        #horizon {
+
+            border: 3px solid tomato;
+            position: relative;
+            top: 50%;
+            margin-top: -9px;
+            transform: rotate(90deg);
+            z-index: 2;
+
+
+
+        }
+
+        img{
+            position: relative;
+            top: 50%;
+            margin-top: -128px;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <div id="circle">
+
+        <div id="vertical"></div>
+        <div id="horizon"></div>
+        <img src="/css/images2/catty01.png" alt="">
+        
+    </div>
+</body>
+</html>
